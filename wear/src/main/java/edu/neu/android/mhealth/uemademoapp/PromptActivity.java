@@ -119,6 +119,7 @@ public class PromptActivity extends Activity {
                 answerOne.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        vibrator.cancel();
                         finish();
                     }
                 });
@@ -126,6 +127,7 @@ public class PromptActivity extends Activity {
                 answerTwo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        vibrator.cancel();
                         finish();
                     }
                 });
@@ -133,6 +135,7 @@ public class PromptActivity extends Activity {
                 answerThree.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        vibrator.cancel();
                         finish();
                     }
                 });
@@ -140,6 +143,7 @@ public class PromptActivity extends Activity {
                 answerFour.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        vibrator.cancel();
                         finish();
                     }
                 });
