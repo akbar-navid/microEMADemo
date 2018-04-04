@@ -109,11 +109,11 @@ public class PromptActivity extends Activity {
                 //set visibility here
                 if (showPromptLayout){
                     promptLinearLayout.setVisibility(View.VISIBLE);
-                    undoLinearLayout.setVisibility(View.GONE);
+                   // undoLinearLayout.setVisibility(View.GONE);
 
                 } else {
                     promptLinearLayout.setVisibility(View.VISIBLE);
-                    undoLinearLayout.setVisibility(View.GONE);
+                   // undoLinearLayout.setVisibility(View.GONE);
                 }
 
                 answerOne.setOnClickListener(new View.OnClickListener() {

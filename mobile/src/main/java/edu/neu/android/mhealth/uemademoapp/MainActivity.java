@@ -14,6 +14,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.wearable.MessageApi;
 import com.google.android.gms.wearable.MessageEvent;
+import com.google.android.gms.wearable.Node;
+import com.google.android.gms.wearable.NodeApi;
 import com.google.android.gms.wearable.Wearable;
 
 public class MainActivity extends AppCompatActivity implements MessageApi.MessageListener,
@@ -45,7 +47,104 @@ public class MainActivity extends AppCompatActivity implements MessageApi.Messag
         simpleMicroEMAButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //run microEMA simple screen
+                Log.d(TAG, "Clicked simple micro EMA");
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        NodeApi.GetConnectedNodesResult nodes = Wearable.NodeApi.getConnectedNodes(mApiClient).await();
+                        for (Node node : nodes.getNodes()) {
+                            MessageApi.SendMessageResult result = Wearable.MessageApi.sendMessage(mApiClient,
+                                    node.getId(), messages[0], "Hello".getBytes()).await();
+                            if (!result.getStatus().isSuccess()) {
+                                Log.e("INFO", "ERROR");
+                            } else {
+                                Log.i("INFO", "Success sent to: " + node.getDisplayName());
+                            }
+
+                        }
+                    }
+                });
+
+                thread.start();
+            }
+        });
+
+        microPAButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "Clicked  micro PA");
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        NodeApi.GetConnectedNodesResult nodes = Wearable.NodeApi.getConnectedNodes(mApiClient).await();
+                        for (Node node : nodes.getNodes()) {
+                            MessageApi.SendMessageResult result = Wearable.MessageApi.sendMessage(mApiClient,
+                                    node.getId(), messages[1], "Hello".getBytes()).await();
+                            if (!result.getStatus().isSuccess()) {
+                                Log.e("INFO", "ERROR");
+                            } else {
+                                Log.i("INFO", "Success sent to: " + node.getDisplayName());
+                            }
+
+                        }
+                    }
+                });
+
+                thread.start();
+            }
+        });
+
+        microVibrateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "Clicked micro vibrate");
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        NodeApi.GetConnectedNodesResult nodes = Wearable.NodeApi.getConnectedNodes(mApiClient).await();
+                        for (Node node : nodes.getNodes()) {
+                            MessageApi.SendMessageResult result = Wearable.MessageApi.sendMessage(mApiClient,
+                                    node.getId(), messages[3], "Hello".getBytes()).await();
+                            if (!result.getStatus().isSuccess()) {
+                                Log.e("INFO", "ERROR");
+                            } else {
+                                Log.i("INFO", "Success sent to: " + node.getDisplayName());
+                            }
+
+                        }
+                    }
+                });
+
+                thread.start();
+            }
+        });
+
+        gestureEMAButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "Clicked gesture EMA");
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        NodeApi.GetConnectedNodesResult nodes = Wearable.NodeApi.getConnectedNodes(mApiClient).await();
+                        for (Node node : nodes.getNodes()) {
+                            MessageApi.SendMessageResult result = Wearable.MessageApi.sendMessage(mApiClient,
+                                    node.getId(), messages[2], "Hello".getBytes()).await();
+                            if (!result.getStatus().isSuccess()) {
+                                Log.e("INFO", "ERROR");
+                            } else {
+                                Log.i("INFO", "Success sent to: " + node.getDisplayName());
+                            }
+
+                        }
+                    }
+                });
+
+                thread.start();
             }
         });
 
