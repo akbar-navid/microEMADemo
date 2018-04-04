@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    tools:context=".MainActivity" tools:deviceIds="wear_square">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/optionOne"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="Sedentary"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:maxLines="2"
+        android:textSize="15sp"
+        android:ellipsize="start"
+        android:background="@drawable/custom_button"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/optionTwo"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="Light/Standing"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:maxLines="2"
+        android:ellipsize="start"
+        android:background="@drawable/custom_button"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/optionThree"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="Moderate/Walking"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:maxLines="2"
+        android:textSize="15sp"
+        android:ellipsize="start"
+        android:background="@drawable/custom_button"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/optionFour"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="Vigorous"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:maxLines="2"
+        android:textSize="15sp"
+        android:ellipsize="start"
+        android:background="@drawable/custom_button"/>
+
+</LinearLayout>
+
