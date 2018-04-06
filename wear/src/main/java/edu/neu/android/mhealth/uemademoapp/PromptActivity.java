@@ -163,6 +163,7 @@ public class PromptActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        vibrator.cancel();
 
         Log.d(TAG, "Inside On Destroy");
     }
