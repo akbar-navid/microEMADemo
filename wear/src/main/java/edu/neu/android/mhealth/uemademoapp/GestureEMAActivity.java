@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.support.wearable.activity.WearableActivity;
+import android.support.wearable.input.WearableButtons;
 import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -38,6 +39,9 @@ public class GestureEMAActivity extends Activity {
             public void onLayoutInflated(WatchViewStub stub) {
                 stub.setFocusableInTouchMode(true);
                 stub.setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
+
+                Log.d(TAG, String.valueOf(WearableButtons.getButtonCount(getApplicationContext())));
+
             }
                                          });
 
@@ -67,16 +71,20 @@ public class GestureEMAActivity extends Activity {
                 Toast.makeText(this, "NAVIGATE_NEXT", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "NAVIGATE_NEXT");
                 vibrator.cancel();
+                finish();
                 return true;
             case KeyEvent.KEYCODE_NAVIGATE_PREVIOUS:
                 Toast.makeText(this, "NAVIGATE_PREVIOUS", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "NAVIGATE_PREVIOUS");
                 vibrator.cancel();
+                finish();
                 return true;
-            /*case KeyEvent.KEYCODE_POWER:
+            case KeyEvent.KEYCODE_STEM_PRIMARY:
                 Toast.makeText(this, "NAVIGATE_POWER", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "NAVIGATE_POWER");
-                vibrator.cancel();*/
+                vibrator.cancel();
+                finish();
+                return true;
         }
 
         return super.onKeyDown(keyCode, event);
