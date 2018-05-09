@@ -138,6 +138,7 @@ public class MicroEngageActivity extends Activity {
     public void onDestroy(){
         super.onDestroy();
         Log.d(TAG, "Wear Main Activity Destroyed");
+        vibrator.cancel();
         //Add dismissal actions here
 
     }

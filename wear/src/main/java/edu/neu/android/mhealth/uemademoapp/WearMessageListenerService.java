@@ -54,7 +54,10 @@ public class WearMessageListenerService extends WearableListenerService{
 
         } else if (event.getPath().equalsIgnoreCase(messages[2])){
             //Launch gesture
+            Intent intent = new Intent(getBaseContext(), GestureEMAActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             Log.d("OnMEssageReceive: ", messages[2]);
+            startActivity(intent);
 
         } else if (event.getPath().equalsIgnoreCase(messages[3])){
             Intent intent = new Intent(getBaseContext(), MicroEngageActivity.class);
